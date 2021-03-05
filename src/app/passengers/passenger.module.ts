@@ -5,6 +5,7 @@ import { PassengerCountComponent } from "./components/passenger-count/passenger-
 import { PassengerListComponent } from "./components/passenger-list/passenger-list.component";
 import { PassengerService } from "./passenger.service";
 import { AddPassenger } from "./components/passenger-add/passenger-add.component";
+import { AppRoutingModule } from "./router.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { AddPassenger } from "./components/passenger-add/passenger-add.component
     PassengerListComponent,
     AddPassenger
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, AppRoutingModule],
   providers: [PassengerService],
   exports: [PassengerDashboardComponent],
 })

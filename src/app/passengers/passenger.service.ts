@@ -18,9 +18,11 @@ export class PassengerService {
   public getPassengers(): Observable<Passenger[]> {
     return  this.http.get<Passenger[]>(URL);
   }
+  
   editPassenger(passenger: Passenger): Observable<void | any>{
     return this.http.put(`${URL}/${passenger.id}`,passenger);
   }
+
   deletePassenger(id : number): Observable<void | any>{
     return this.http.delete(`${URL}/${id}`);
   }

@@ -27,7 +27,4 @@ export class PassengerListComponent {
   handleRemove(id: number) {
     this.remove.emit(id);
   }
-  addPassenger(){
-    
-  }
 }

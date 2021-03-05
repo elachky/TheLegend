@@ -13,7 +13,8 @@ export class AddPassenger{
     name: string;
     constructor(){ }
     addPassenger(){
-        this.nameEvent.emit(this.name);
+        // this.nameEvent.emit(this.name);
+        console.log(this.name)
     }
     handleNameEdit(event: any){
         this.name = event.target.value;
