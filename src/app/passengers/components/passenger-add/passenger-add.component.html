@@ -1,2 +1,17 @@
-<input (input)='handleNameEdit($event)'> 
-<button (click) = 'addPassenger()'>add</button>
+<h1>Passenger Form</h1>
+<form #passengerForm = "ngForm" (ngSubmit) = "onClickSubmit(passengerForm)">
+    <input type="text" ngModel placeholder="Full Name" ng name="fullName" required><br>
+    <input type="date" ngModel name="checkInDate" required><br>
+    <form #childForm = "ngForm" (ngSubmit) = "onChildSubmit(childForm)">
+        <h2>children informations</h2>
+        <div *ngIf= "children">
+            <div  *ngFor='let child of children'>
+                {{child.name}}
+            </div>
+        </div>
+        <input type="text" class="child" name="name" placeholder="name" ngModel><br>
+        <input type="text" class="child" name="age" placeholder="age" ngModel><br>
+        <input type="submit" class="child" value="Add Child">
+    </form>
+    <input type="submit" >
+</form>

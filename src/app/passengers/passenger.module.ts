@@ -6,6 +6,7 @@ import { PassengerListComponent } from "./components/passenger-list/passenger-li
 import { PassengerService } from "./passenger.service";
 import { AddPassenger } from "./components/passenger-add/passenger-add.component";
 import { AppRoutingModule } from "./router.module";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { AppRoutingModule } from "./router.module";
     PassengerListComponent,
     AddPassenger
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, FormsModule],
   providers: [PassengerService],
   exports: [PassengerDashboardComponent],
 })

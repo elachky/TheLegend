@@ -32,29 +32,12 @@ export class PassengerDashboardComponent implements OnInit {
 
   removePassenger(id: number) {
     this.passengerService.deletePassenger(id).subscribe(() => {
-      this.passengers = this.passengers.filter((passenger) => {passenger.id !== id})
+      this.passengers = this.passengers.filter((passenger) => passenger.id !== id)
     })
   }
 
   getPassengers(){
     this.passengerService.getPassengers().subscribe(passengers => this.passengers = passengers);
-  }
-
-  addPassenger(name: string){
-    this.passengerId = this.passengers.length + 1;
-    // this.passengers = [...this.passengers ,{id :this.passengerId, fullName : name, checkedIn: false, checkInDate : undefined, children: undefined}]
-    this.passengerService.addPassenger({id : this.uniqueId(), fullName : name, checkedIn: false, checkInDate : null, children: null}).subscribe(()=>{
-      this.passengers = [...this.passengers, {id :this.passengerId, fullName : name, checkedIn: false, checkInDate : null, children: null}]
-    },(error)=>console.log(error)); //add using service 
-  }
-
-  uniqueId(){
-    const len = this.passengers.length  + 1;
-
-    for (let i = 0; i <= len; i++) {
-      if (!this.passengers.some(el => el.id === i))
-        return i;
-    }
   }
   
 }
